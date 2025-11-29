@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TuneCraft - Music Player (API)</title>
+  <link rel="stylesheet" href="s.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header / Logo -->
+    <header class="header">
+      <div class="brand">
+        <!-- replace with your logo image if you have -->
+        <img src="LOGO/LOGO.png" alt="TuneCraft Logo" class="logo-img">
+        <h1>TuneCraft</h1>
+      </div>
+
+      <!-- Search box -->
+      <div class="search-box">
+        <input id="search-input" type="search" placeholder="Search songs, artists..." />
+        <button id="search-btn">Search</button>
+      </div>
+    </header>
+
+    <!-- Main player + results grid -->
+    <main class="main-grid">
+
+      <!-- Left: Player card -->
+      <section class="player-card">
+        <div class="cover-wrap">
+          <img id="cover" src="assets/default-cover.png" alt="cover" class="cover">
+        </div>
+
+        <div class="meta">
+          <h2 id="title">No song selected</h2>
+          <p id="artist">Search & play songs</p>
+        </div>
+
+        <div class="progress-container" id="progress-container">
+          <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="current-time">00:00</span>
+          <span id="duration">00:00</span>
+        </div>
+
+        <div class="controls">
+          <button id="prev" class="btn"><img src="assets/prev.svg" alt="prev"></button>
+          <button id="play" class="btn big"><img id="play-icon" src="assets/paly.svg" alt="play"></button>
+          <button id="next" class="btn"><img src="assets/next.svg" alt="next"></button>
+        </div>
+
+        <div class="volume">
+          <label>Volume</label>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <div class="player-actions">
+          <label><input id="autoplay" type="checkbox"> Autoplay next</label>
+        </div>
+      </section>
+
+      <!-- Right: Search results -->
+      <aside class="results" id="results">
+        <p class="hint">Search for a song or artist above and click a result to play.</p>
+        <ul id="results-list" class="results-list"></ul>
+      </aside>
+
+    </main>
+  </div>
+
+  <!-- scripts -->
+  <script src="api.js"></script>
+  <script src="s.js"></script>
+</body>
+</html>
